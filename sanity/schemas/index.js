@@ -1,1 +1,2 @@
-export const schemaTypes = []
+import game from "./game";
+export const schemaTypes = [game]
