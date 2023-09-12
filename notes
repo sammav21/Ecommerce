@@ -1,0 +1,14 @@
+Plan
+1. Style home, products, product, and cart pages (using dummy hardcoded data)
+2. Connect sanity db to code to fill in item info
+    2a. Fetch data from api library igdb???
+3. Create 'add to cart' logic/functionality 
+    3a. Without much thought, at the moment it seems I will create a new table in sanity db that will hold array of products. I can add/delete from it (1 cart has many products)
+4. Create 'checkout' logic/functionality 
+    4a. Add success page.
+5. Depending on how long 1-4 takes, asseess if I leave it there or move on?
+6. Create and style account page/liked items page 
+7. Add 'sign in/sign out' functionality
+    7a. Next-auth (google, github, etc. or JWT?)
+8. Add 'like item' logic/functionality 
+9. Take account data and add to checkout process to prefill 
