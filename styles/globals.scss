@@ -4,4 +4,48 @@
   box-sizing: border-box;
 }
 
+.w100{
+  width: 100%;
+}
+.h100{
+  height: 100%;
+}
 
+.flex{
+  display: flex;
+}
+.flex-col{
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-row-center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-col-center{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+main{
+  width: 100%;
+}
+
+.welcome-Container{
+  position: absolute;
+  top: 0;
+}
+.welcome-Title{
+  position: absolute;
+  z-index: 1;
+  font-size: 19rem;
+  line-height: 0;
+  top: 42%;
+  color: #b8674f;
+  
+}
