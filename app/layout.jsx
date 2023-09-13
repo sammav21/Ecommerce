@@ -5,11 +5,12 @@ export const metadata = {
   title: 'ecommerce',
   description: 'project'
 }
+
 const RootLayout = ({children}) => {
   return (
     <html lang='en'>
       <body>
-        <main className='app'>
+        <main className='app w100'>
           <Nav />
           {children}
           <Footer />
