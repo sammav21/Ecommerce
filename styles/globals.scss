@@ -98,25 +98,39 @@ footer{
 
 .home-Container{
   margin-top: 5rem;
-  .description-Container{
+  width: 70%;
+  .description-Container, .button-Container{
     margin: 0 6.25rem;
-    width: 60%;
-    background-color: blue;
-
-    h1{
-      font-size: 5rem;
-      line-height: 1;
-    }
+  }
+  h1{
+    font-size: 4rem;
+    line-height: 1;
+    color: #272D4E;
   }
   button{
-    margin: 4.18rem 0 0 6.25rem;
-    width: 12.56rem;
-    height: 3.93rem;
+    margin: 3rem 0 0 0;
+    padding: 1.12rem 2.69rem;
     border-radius: 7px;
     outline: none;
     border: none;
     background-color: #5B6B3A;
     color: #F5F5F5;
     box-shadow: 0 9px 20px 3px #5b6b3a54;
+  }
+
+  .plantCarousel-Container{
+    margin-top: 1.5rem;
+    div{
+      height: 10rem;
+      width: 8.32rem;
+      justify-content: flex-end;
+      align-items: center;
+      padding-bottom: 1.25rem;
+      border-radius: 15px;
+      background: linear-gradient(-140deg,#d9d9d949 50% , #F5F5F5 50%);
+      font-weight: 600;
+      font-size: .94rem;
+      position: relative;
+    }
   }
 }
