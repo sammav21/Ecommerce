@@ -1,7 +1,7 @@
 export default{
-    name: 'game',
+    name: 'plant',
     type: 'document',
-    title: 'Game',
+    title: 'Plant',
     fields: [
         {
             name: 'name',
