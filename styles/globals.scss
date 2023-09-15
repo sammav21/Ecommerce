@@ -98,7 +98,7 @@ footer{
 
 .home-Container{
   margin-top: 4rem;
-  width: 70%;
+  width: 75%;
   .description-Container, .button-Container{
     margin: 0 6.25rem;
   }
@@ -119,11 +119,12 @@ footer{
   }
 
   .plantCarousel-Container{
+    position: relative;
     margin-top: 2rem;
-    div{
-      height: 10rem;
-      width: 8.32rem;
-      margin-right: 1rem;
+    .plant-Container {
+      height: 11rem;
+      width: 10rem;
+      margin-right: 1.5rem;
       justify-content: flex-end;
       align-items: center;
       padding-bottom: 1.25rem;
@@ -131,7 +132,13 @@ footer{
       background: linear-gradient(-140deg,#d9d9d949 50% , #F5F5F5 50%);
       font-weight: 600;
       font-size: .94rem;
-      position: relative;
+    }
+    .plantInFocus{
+      position: absolute;
+      right: -18%;
+      bottom: 15%;
     }
   }
+
+
 }
