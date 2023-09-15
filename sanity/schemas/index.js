@@ -1,2 +1,2 @@
-import game from "./game";
-export const schemaTypes = [game]
+import plant from "./plant";
+export const schemaTypes = [plant]

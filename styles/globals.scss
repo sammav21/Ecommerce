@@ -97,7 +97,7 @@ footer{
 }
 
 .home-Container{
-  margin-top: 5rem;
+  margin-top: 4rem;
   width: 70%;
   .description-Container, .button-Container{
     margin: 0 6.25rem;
@@ -119,10 +119,11 @@ footer{
   }
 
   .plantCarousel-Container{
-    margin-top: 1.5rem;
+    margin-top: 2rem;
     div{
       height: 10rem;
       width: 8.32rem;
+      margin-right: 1rem;
       justify-content: flex-end;
       align-items: center;
       padding-bottom: 1.25rem;
