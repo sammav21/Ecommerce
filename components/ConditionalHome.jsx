@@ -1,6 +1,4 @@
 import {useEffect, useState} from 'react';
-import Carousel from 'react-multi-carousel';
-import 'react-multi-carousel/lib/styles.css';
 import HomePlant from "@components/HomePlant";
 import {client} from '@utils/client';
 
@@ -32,11 +30,11 @@ export default function ConditionalHome() {
         <button>Explore 's</button>
       </div>
       <div className="plantCarousel-Container w100 flex">
-        <Carousel responsive={responsive}>
+       
             {plants.map((plant, i) => (
               <HomePlant key={i} image={plant.image[0]} name={plant.name}/>
             ))}
-        </Carousel>
+    
         {/*maybe place image here of whatever is highlighted*/}
       </div>
     </>
