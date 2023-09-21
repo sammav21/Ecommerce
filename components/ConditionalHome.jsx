@@ -1,10 +1,10 @@
+'use client'
 import {useEffect, useState} from 'react';
-import HomePlant from "@components/HomePlant";
 import {client} from '@utils/client';
+import { urlFor } from "@utils/client";
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import { urlFor } from "@utils/client";
-
+import HomePlant from "@components/HomePlant";
 
 export default function ConditionalHome() {
 
