@@ -143,3 +143,28 @@ footer{
   }
 }
 
+.shop-Container{
+  h1{
+    color: #272D4E;
+    font-size: 6rem;
+    text-transform:uppercase;
+  }
+  >div{
+    border-top: 1px solid black;
+    padding: 1rem 0;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    >p{
+      padding: 0.5rem 1rem;
+    }
+    .shopItem-Container{
+      margin-top: 1rem;
+      div{
+        margin-top: 1rem;
+        .price{
+          font-size: .8rem;
+        }
+      }
+    }
+  }
+}
