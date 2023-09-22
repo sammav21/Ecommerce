@@ -12,7 +12,6 @@ const Welcome = () => {
       zIndex: '2', position: 'absolute',  transform: 'scaleX(-1)'}}/>
       <h1 className="welcome-Title">.Plants</h1>
       <Image src={welcomeImage} alt='leaves' style={{width:'100%', height: '100%', objectFit: 'cover', transform: 'scaleX(-1)'}}/>
-      
     </div>
   )
 }

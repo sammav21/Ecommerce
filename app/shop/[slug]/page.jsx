@@ -33,9 +33,9 @@ export default function Product() {
               <h1>{`plant name`}</h1>
               <p>price</p>
             </div>
-            <p>With their small, silvery, gray-green leaves, olive trees (this specific variety is the Common Olive Tree) make beautiful houseplants. These Mediterranean plants need a lot of bright, direct sunlight. South and west facing windows are ideal. Pet friendly.</p>
+            <p className='description'>With their small, silvery, gray-green leaves, olive trees (this specific variety is the Common Olive Tree) make beautiful houseplants. These Mediterranean plants need a lot of bright, direct sunlight. South and west facing windows are ideal. Pet friendly.</p>
           </div>
-          <div className='buttons-Container'>
+          <div className='buttons-Container flex'>
               <input type='number' defaultValue='1'/>
               <button>Add To Cart</button>
           </div>
