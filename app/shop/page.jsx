@@ -11,19 +11,23 @@ export default function Shop() {
     {
       image: plant1,
       name: 'plant 1',
-      price: '$10'
+      price: '$10',
+      slug: 'plant1'
     },
     {
       image:plant2,
       name: 'plant 2',
-      price: '$20'
+      price: '$20',
+      slug: 'plant2'
     },
     {
       image:plant3,
       name: 'plant 3',
-      price: '$30'
+      price: '$30',
+      slug: 'plant3'
     }
   ]
+
   return (
     <section className="shop-Container flex-col-center">
       <h1 style={poppins.style}>Shop</h1>
@@ -32,7 +36,7 @@ export default function Shop() {
         <p>Sort by</p>
       </div>
       <div className='shopItems-Container flex-row-center w100' style={poppins.style}>
-        {plants.map((plant, i) => (<ShopPlant image={plant.image} key={i} name={plant.name} price={plant.price}/>))}
+        {plants.map((plant, i) => (<ShopPlant image={plant.image} key={i} name={plant.name} price={plant.price} slug={plant.slug}/>))}
       </div>
     </section>
   )

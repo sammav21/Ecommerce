@@ -10,6 +10,9 @@
 .h100{
   height: 100%;
 }
+.section-margin{
+  margin: 2.56rem 6.25rem 0;
+}
 
 .flex{
   display: flex;
@@ -159,6 +162,8 @@ footer{
     }
     .shopItem-Container{
       margin-top: 1rem;
+      text-decoration: none;
+      color: #272D4E;
       div{
         margin-top: 1rem;
         .price{
@@ -168,3 +173,43 @@ footer{
     }
   }
 }
+
+.product-ContainerLeft{
+  width: 55%;
+  height: 75vh;
+  justify-content: space-between;
+  .verticalSlide{
+    width:25%;
+    height: auto;
+    align-items: center;
+    background-color: #5b6b3a1a;
+    overflow-y: scroll;
+  }
+  ::-webkit-scrollbar{
+    display: none;
+  }
+}
+
+.product-ContainerRight{
+  width: 45%;
+  height: 75vh;
+  align-items: flex-start;
+  padding: 1rem 0rem 1rem 1rem;
+  background-color: blue;
+  .productInfo-Container{
+    height: 75%;
+    justify-content: space-between;
+      h1{
+        color: #272D4E;
+        font-size: 3rem;
+        text-transform:uppercase;
+        line-height: 1;
+      }
+   
+  }
+  .productButtons-Container{
+    height: 25%;
+  }
+  
+}
+
