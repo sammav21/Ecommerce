@@ -1,7 +1,7 @@
 export default{
-    name: 'plant',
+    name: 'plantCategories',
     type: 'document',
-    title: 'Plant',
+    title: 'Plant Categories',
     fields: [
         {
             name: 'name',
@@ -9,13 +9,12 @@ export default{
             title: 'Name'
         },
         {
-            name: 'images',
-            type: 'array',
-            of: [{type: 'image'}],
+            name: 'image',
+            type: 'image',
             options: {
                 hotspot: true
             },
-            title: 'Images'
+            title: 'Image'
         },
         {
             name: 'slug',
@@ -30,11 +29,6 @@ export default{
             name: 'description',
             type: 'string',
             title: 'Description'
-        },
-        {
-            name: 'price',
-            type: 'number',
-            title: 'Price'
         }
     ]
 }

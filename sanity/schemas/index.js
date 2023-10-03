@@ -1,2 +1,3 @@
 import plant from "./plant";
-export const schemaTypes = [plant]
+import plantCategories from "./plantCategories";
+export const schemaTypes = [plant, plantCategories]

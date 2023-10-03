@@ -1,39 +1,50 @@
-import plant1 from '@public/assets/sarah-dorweiler-ALtNa-uKy3M-unsplash.jpg';
-import plant2 from '@public/assets/feey-bwsTJMnhcwE-unsplash.jpg';
-import plant3 from '@public/assets/feey-1gwjE0c3PSQ-unsplash.jpg'
+'use client'
+import { urlFor } from '@utils/client';
 import Image from 'next/image';
 import { Poppins } from "next/font/google";
+import { client } from "@utils/client";
+import { useState, useEffect } from 'react';
+const poppins = Poppins({subsets: ['latin'], weight: ['400', '800']});
 
- const poppins = Poppins({subsets: ['latin'], weight: ['400', '800']});
+export default function Product({params}) {
+  const [plant, setPlant] = useState(null); // Initialize as null or with a loading state
+  const slug = params.slug;
 
-export default function Product() {
-  const plant = 
-    {
-      images: [plant1, plant2, plant3, plant1, plant2, plant3],
-      name: 'plant 1',
-      price: '$10',
-      slug: 'plant1'
+  useEffect(() => {
+    async function fetchPlantData() {
+      try {
+        const query = `*[_type == 'plant' && slug.current == '${slug}'][0]`;
+        const plantData = await client.fetch(query);
+        setPlant(plantData); // Update the component state with the fetched data
+      } catch (error) {
+        console.error('Error fetching plant data:', error);
+      }
     }
-  
+    fetchPlantData();
+  }, [slug]); // Run the effect whenever the slug parameter changes
+
+  if (!plant) {
+    return <div>Loading...</div>; // or handle the loading state as needed
+  }
 
   return (
     <section className='flex-col-center section-margin'>
       <div className='flex-row-center w100'>
         <div className='product-ContainerLeft flex'>
           <div className='verticalSlide flex-col'>
-            {plant.images?.map((image, i) => (
-              <Image key={i} src={image} alt="plant" style={{width: '90%', height: 'auto', objectFit: 'fill', paddingBottom: '0.5rem'}}/>
+            {plant.image?.map((image, i) => (
+              <img key={i} src={urlFor(image)} alt="plant" style={{width: '90%', height: 'auto', objectFit: 'fill', paddingBottom: '0.5rem'}}/>
             ))}
           </div>
-          <Image className='mainImage' src={plant1} style={{width: '75%', height: 'auto', objectFit: 'cover'}} />
+          <img className='mainImage' alt='plant' src={urlFor(plant.image[0])} style={{width: '75%', height: 'auto', objectFit: 'cover'}} />
         </div>
         <div className='product-ContainerRight flex-col' style={poppins.style}>
           <div className='info-Container flex-col'>
             <div className='infoTitle'>
-              <h1>{`plant name`}</h1>
-              <p>price</p>
+              <h1>{plant.name}</h1>
+              <p>{plant.price}</p>
             </div>
-            <p className='description'>With their small, silvery, gray-green leaves, olive trees (this specific variety is the Common Olive Tree) make beautiful houseplants. These Mediterranean plants need a lot of bright, direct sunlight. South and west facing windows are ideal. Pet friendly.</p>
+            <p className='description'>{plant.description}</p>
           </div>
           <div className='buttons-Container flex'>
               <input type='number' defaultValue='1'/>
@@ -44,3 +55,9 @@ export default function Product() {
     </section>
   )
 }
+
+// export async function getDetails(slug) {
+//     const query = `*[_type == 'plant' && slug.current == '${slug}'][0]`;
+//     const plant = await client.fetch(query)
+//   return plant;
+// }

@@ -1,14 +1,23 @@
 'use client'
 import ShopPlant from '@components/ShopPlant';
-
 import { Poppins } from "next/font/google";
-import { fetchHomePagePlants } from '@utils/fetchHomePagePlants';
+import {useEffect, useState} from 'react';
+import { client } from "@utils/client";
 
  const poppins = Poppins({subsets: ['latin'], weight: ['400', '800']});
 
 export default function Shop() {
-  const plants = fetchHomePagePlants();
-  console.log(plants);
+  const [plants, setPlants] = useState([]);
+
+  useEffect(() => {
+        const fetchData = async() => {
+            const query = '*[_type == "plant"]';
+            const data = await client.fetch(query);
+            setPlants(data) 
+        }
+        fetchData();
+    }, []);
+
   return (
     <section className="shop-Container flex-col-center">
       <h1 style={poppins.style}>Shop</h1>

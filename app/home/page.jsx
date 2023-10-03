@@ -3,17 +3,28 @@ import Image from "next/image";
 import rectangle from '@public/assets/Rectangle.png';
 import { Poppins } from "next/font/google";
 import { urlFor } from "@utils/client";
-import {useState} from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import HomePlant from "@components/HomePlant";
-import { fetchHomePagePlants } from "@utils/fetchHomePagePlants";
+import {useEffect, useState} from 'react';
+import { client } from "@utils/client";
 
 const poppins = Poppins({subsets: ['latin'], weight: ['400', '600','700','800']});
 
+
 export default function Home() {
 
-  const plants = fetchHomePagePlants();
+  const [plants, setPlants] = useState([]);
+
+  useEffect(() => {
+        const fetchData = async() => {
+            const query = '*[_type == "plant"]';
+            const data = await client.fetch(query);
+            setPlants(data) 
+        }
+        fetchData();
+    }, []);
+
   const [plantInFocus, setPlantInFocus] = useState(0);
   
   const updateHighlight = (index) => {
